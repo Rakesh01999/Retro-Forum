@@ -4,8 +4,38 @@ const loadPosts = async () => {
     // const posts = data.posts ; 
     const posts = data.posts;
     displayPosts(posts);
-
 }
+
+let readC = 0;
+function readCount(){
+
+    // post.addEventListener('click', function (event) {
+    //     console.log('clicked') ;
+    // });
+    readC++ ;
+    // const postName = seat.querySelector('span').innerText;
+    // console.log(readC) ;
+
+    const read = document.getElementById('read').innerText = readC ;
+    const postTitle = document.querySelector('h2').innerText ;
+    let viewCount = document.getElementById('view_count').innerText ;
+    // console.log((postTitle)) ;
+    console.log((viewCount)) ;
+
+    const titleContainer = document.getElementById('title-container');
+
+        const p = document.createElement('p');
+
+        // p.innerText = postTitle + " "  + viewCount ;
+        p.innerText = postTitle + " "   ;
+        titleContainer.appendChild(p);
+        p.classList.add("text-[16px]");
+}
+    
+// const msgBtn = document.getElementById('msg-Btn') ;
+//  msgBtn.addEventListener('click', function (event) {
+//         console.log('clicked') ;
+//     });
 
 const displayPosts = posts => {
     // console.log(posts);
@@ -23,17 +53,15 @@ const displayPosts = posts => {
             <div>
                 <figure><img class="h-[72px] w-[72px] rounded-2xl"
                         src="${post.image}"
-                        alt="Movie" /></figure>
+                        alt="" /></figure>
             </div>
             <div class="flex flex-col gap-4">
                 <div class="flex text-[16px] gap-6">
-                    <p># Music</p>
-                    <p>Author : Awlad Hossain</p>
+                    <p># ${post.category}</p>
+                    <p>Author : ${post.author.name}</p>
                 </div>
-                <h2 class="card-title text-[20px] font-bold">10 Kids Unaware of Their
-                    Halloween Costume</h2>
-                <p class="text-[16px] ">It’s one thing to subject yourself to ha
-                    Halloween costume mishap because, hey that’s your prerogative</p>
+                <h2 id="tit" class="card-title text-[20px] font-bold">${post.title} </h2>
+                <p class="text-[16px] ">${post.description}</p>
                 <!-- dashed line -->
                 <div
                     class="relative flex items-center w-[335px] h-[1px] md:container md:mx-auto">
@@ -47,14 +75,14 @@ const displayPosts = posts => {
                         </div>
                         <div class="flex gap-1">
                             <img src="images/eye.png" alt="">
-                            <p class="text-[16px]">${post.view_count}</p>
+                            <p id="view_count" class="text-[16px]">${post.view_count}</p>
                         </div>
                         <div class="flex gap-1">
                             <img src="images/clock.png" alt="">
                             <p class="text-[16px]">${post.posted_time}</p>
                         </div>
                     </div>
-                    <button class="justify-end">
+                    <button onclick="readCount()" id="msg-Btn" class="justify-end">
                         <img src="images/grm.png" alt="">
                     </button>
                 </div>
@@ -66,5 +94,7 @@ const displayPosts = posts => {
         postContainer.appendChild(postCard);
     });
 }
+
+
 
 loadPosts();
