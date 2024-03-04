@@ -8,7 +8,6 @@ const loadPosts = async () => {
 }
 
 let readC = 0;
-// function readCount(tit){
 const readCount = (tit) => {
 
     // post.addEventListener('click', function (event) {
