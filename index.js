@@ -8,7 +8,8 @@ const loadPosts = async () => {
 }
 
 let readC = 0;
-function readCount(){
+// function readCount(tit){
+const readCount = (tit) => {
 
     // post.addEventListener('click', function (event) {
     //     console.log('clicked') ;
@@ -19,6 +20,8 @@ function readCount(){
 
     const read = document.getElementById('read').innerText = readC ;
     const postTitle = document.querySelector('h2').innerText ;
+    // const postTitle = document.getElementById(tit).innerText ;
+    // const postTitle = document.getElementById(tit.innerText) ;
     let viewCount = document.getElementById('view_count').innerText ;
     // console.log((postTitle)) ;
     console.log((viewCount)) ;
@@ -27,8 +30,8 @@ function readCount(){
 
         const p = document.createElement('p');
 
-        // p.innerText = postTitle + " "  + viewCount ;
-        p.innerText = postTitle + " "   ;
+        p.innerText = postTitle + " "  + viewCount ;
+        // p.innerText = postTitle + " "   ;
         titleContainer.appendChild(p);
         p.classList.add("text-[16px]");
 }
@@ -83,7 +86,7 @@ const displayPosts = posts => {
                             <p class="text-[16px]">${post.posted_time}</p>
                         </div>
                     </div>
-                    <button onclick="readCount()" id="msg-Btn" class="justify-end">
+                    <button onclick="readCount(tit)" id="msg-Btn" class="justify-end">
                         <img src="images/grm.png" alt="">
                     </button>
                 </div>
