@@ -43,7 +43,7 @@ const displayPosts = posts => {
     const postContainer = document.getElementById('post-container');
 
     posts.forEach(post => {
-        console.log(post);
+        // console.log(post);
         // create a div
         const postCard = document.createElement('div');
         postCard.classList = `card card-side bg-[#F3F3F5] shadow-xl`;
