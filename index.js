@@ -97,9 +97,4 @@ const displayPosts = posts => {
 }
 
 
-// latest posts
-
-
-
-
 loadPosts();

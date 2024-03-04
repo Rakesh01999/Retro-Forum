@@ -1,16 +1,16 @@
-function handlerCard(){
-  
+function handlerCard() {
+
     fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
-    .then(response => response.json())
-    .then(data=>Showdetails(data))
-  
-  }
-  
-  function Showdetails(CardInfo){
-   const CardDetailsShow = document.getElementById('CardDetailsShow')
-   CardInfo.forEach(result=>{
-       const CardDetail = document.createElement('section')    
-       CardDetail.innerHTML = `<div class="card w-96 shadow-xl">
+        .then(response => response.json())
+        .then(data => Showdetails(data))
+
+}
+
+function Showdetails(CardInfo) {
+    const CardDetailsShow = document.getElementById('CardDetailsShow')
+    CardInfo.forEach(result => {
+        const CardDetail = document.createElement('section')
+        CardDetail.innerHTML = `<div class="card w-96 shadow-xl">
        <figure><img src="${result.cover_image}" alt="Shoes" /></figure>
        <div class="card-body">
          <h2 class="card-title">${result.author.posted}</h2>
@@ -25,9 +25,9 @@ function handlerCard(){
          </div>
        </div> 
      </div>`
-  
-      CardDetailsShow.appendChild(CardDetail)
-   })
-  }
-  
-  handlerCard()
+
+        CardDetailsShow.appendChild(CardDetail)
+    })
+}
+
+handlerCard()
