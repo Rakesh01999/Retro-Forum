@@ -10,9 +10,6 @@ const loadPosts = async () => {
 let readC = 0;
 const readCount = (tit) => {
 
-    // post.addEventListener('click', function (event) {
-    //     console.log('clicked') ;
-    // });
     readC++ ;
     // const postName = seat.querySelector('span').innerText;
     // console.log(readC) ;
